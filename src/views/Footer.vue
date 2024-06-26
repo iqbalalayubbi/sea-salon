@@ -7,15 +7,15 @@
     </aside>
     <nav class="flex flex-col items-center">
       <h6 class="footer-title">Services</h6>
-      <a class="link link-hover">Haircuts and Styling</a>
-      <a class="link link-hover">Manicure and Pedicure</a>
-      <a class="link link-hover">Facial Treatments</a>
+      <a class="link link-hover" v-for="service in services" :key="service">
+        {{ service }}
+      </a>
     </nav>
     <nav class="flex flex-col items-center">
       <h6 class="footer-title">Menu</h6>
-      <a class="link link-hover">Home</a>
-      <a class="link link-hover">Services</a>
-      <a class="link link-hover">Testimonials</a>
+      <a class="link link-hover" v-for="menu in menus" :key="menu">
+        {{ menu }}
+      </a>
     </nav>
     <nav class="flex flex-col items-center mb-10">
       <h6 class="footer-title">Contact</h6>
@@ -30,3 +30,15 @@
     </nav>
   </footer>
 </template>
+
+<script setup>
+import { reactive } from "vue";
+
+const services = reactive([
+  "Haircuts and Styling",
+  "Manicure and Pedicure",
+  "Facial Treatments",
+]);
+
+const menus = reactive(["Home", "Services", "Testimonials"]);
+</script>
