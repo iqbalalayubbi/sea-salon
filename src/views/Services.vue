@@ -1,7 +1,10 @@
 <template>
   <main class="flex flex-col items-center mt-10">
     <!-- title -->
-    <TitleSection />
+    <TitleSection
+      title="Our Service"
+      description="Many benefit in this salon with your style"
+    />
     <!-- cards -->
     <section class="flex flex-col items-center gap-8 mt-10">
       <Card
@@ -16,8 +19,8 @@
 </template>
 
 <script setup>
-import Card from "@/components/services/Card.vue";
 import TitleSection from "@/components/TitleSection.vue";
+import Card from "@/components/services/Card.vue";
 import { reactive } from "vue";
 
 const services = reactive([

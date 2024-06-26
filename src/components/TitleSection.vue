@@ -1,4 +1,13 @@
 <template>
-  <h1 class="text-3xl font-bold text-primary">Our Services</h1>
-  <h5 class="text-lg">Many benefit in this salon with your style</h5>
+  <div>
+    <h1 class="text-3xl text-center font-bold text-primary">{{ title }}</h1>
+    <h5 class="text-lg text-center">{{ description }}</h5>
+  </div>
 </template>
+
+<script setup>
+const props = defineProps({
+  title: String,
+  description: String,
+});
+</script>
