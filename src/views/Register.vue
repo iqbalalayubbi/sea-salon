@@ -15,7 +15,9 @@
     </button>
     <span
       >Already have account ?
-      <a class="link link-hover text-primary">Login</a></span
+      <RouterLink to="/login" class="link link-hover text-primary"
+        >Login</RouterLink
+      ></span
     >
   </main>
 </template>

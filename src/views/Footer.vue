@@ -1,6 +1,7 @@
 <template>
   <footer
     class="mt-10 footer bg-cream-brown text-black-color flex flex-col items-center"
+    id="contacts"
   >
     <aside class="mt-10">
       <h1 class="text-3xl text-primary font-bold">SEA SALON</h1>

@@ -13,7 +13,9 @@
     <button class="btn btn-primary w-full max-w-xs mt-12 mb-5">Login</button>
     <span
       >Don't have an account ?
-      <a class="link link-hover text-primary">Register</a></span
+      <RouterLink to="/register" class="link link-hover text-primary"
+        >Register</RouterLink
+      ></span
     >
   </main>
 </template>

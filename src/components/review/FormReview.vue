@@ -6,10 +6,14 @@
       type="text"
       placeholder="Your name..."
       class="input input-bordered w-full max-w-xs"
+      @input="inputChange('name', name)"
+      v-model="name"
     />
     <textarea
       class="textarea textarea-bordered w-full max-w-xs h-40"
       placeholder="Your review..."
+      v-model="comment"
+      @input="inputChange('comment', comment)"
     ></textarea>
     <div class="rating">
       <input
@@ -21,6 +25,7 @@
         :checked="i == selectedRating"
         :class="{ 'bg-orange-400': isSelected }"
         @click="isSelected = true"
+        @input="inputChange('rating', i)"
       />
     </div>
   </section>
@@ -31,4 +36,11 @@ import { ref } from "vue";
 
 const selectedRating = ref(0);
 const isSelected = ref(false);
+const name = ref("");
+const comment = ref("");
+const emit = defineEmits(["inputChange"]);
+
+function inputChange(input, value) {
+  emit("inputChange", input, value);
+}
 </script>

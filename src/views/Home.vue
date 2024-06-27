@@ -1,7 +1,7 @@
 <template>
-  <main class="flex flex-col h-screen">
-    <Navbar class="h-10" />
-    <HeroSection class="flex-1 px-4" />
+  <main class="h-screen relative" id="home">
+    <Navbar class="fixed top-0 z-50" />
+    <HeroSection class="px-4 mt-10" />
   </main>
 </template>
 

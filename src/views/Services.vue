@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col items-center mt-10">
+  <main class="flex flex-col items-center mt-10" id="services">
     <!-- title -->
     <TitleSection
       title="Our Service"

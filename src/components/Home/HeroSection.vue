@@ -10,7 +10,7 @@
         Reservation Now
       </button>
     </section>
-    <section class="self-end">
+    <section class="self-end mt-10">
       <img src="../../assets/image.png" alt="" width="200" />
     </section>
   </main>

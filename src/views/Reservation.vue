@@ -17,13 +17,17 @@
         <option>Manicure and Pedicure</option>
         <option>Facial Treatments</option>
       </select>
-      <button class="btn btn-primary w-full max-w-xs mt-5">
+      <button
+        class="btn btn-primary w-full max-w-xs mt-5"
+        @click="checkCounter"
+      >
         Make Reservation
       </button>
     </section>
   </main>
 </template>
 <script setup>
+import { useCounterStore } from "@/stores/counter";
 import { reactive } from "vue";
 
 const inputs = reactive([
@@ -44,4 +48,10 @@ const inputs = reactive([
     placeholder: "Reservation Time",
   },
 ]);
+
+const counter = useCounterStore();
+function checkCounter() {
+  counter.increment();
+  console.log(counter.count);
+}
 </script>

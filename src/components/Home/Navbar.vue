@@ -4,7 +4,7 @@
       <a class="btn btn-ghost text-xl text-primary">SEA SALON</a>
     </div>
     <div class="flex-none">
-      <button class="btn btn-square btn-ghost">
+      <button class="btn btn-square btn-ghost" @click="navbarState.openNav">
         <Iconify
           icon="tabler:menu-deep"
           width="24"
@@ -15,3 +15,9 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { useNavbarStore } from "@/stores/navbar";
+
+const navbarState = useNavbarStore();
+</script>
