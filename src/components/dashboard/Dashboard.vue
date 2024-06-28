@@ -1,6 +1,6 @@
 <template>
-  <main>
-    <div class="flex gap-5 justify-center">
+  <main class="flex flex-col items-center">
+    <div class="flex gap-5 justify-center w-full">
       <Card
         v-for="info in cardInformations"
         :key="info"
@@ -10,6 +10,7 @@
         :className="info.color"
       />
     </div>
+    <TableReservation />
   </main>
 </template>
 
@@ -17,6 +18,7 @@
 import { reactive } from "vue";
 
 import Card from "@/components/dashboard/Card.vue";
+import TableReservation from "@/components/dashboard/TableReservation.vue";
 
 const cardInformations = reactive([
   {

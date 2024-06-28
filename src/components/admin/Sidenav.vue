@@ -4,14 +4,18 @@
       <h1 class="text-3xl text-primary font-bold text-center pt-10 mb-5">
         SEA SALON
       </h1>
-      <RouterLink
+      <div
         class="flex gap-3 items-center py-3 hover:text-cream hover:bg-primary transition-all duration-300"
+        :class="{
+          'text-cream bg-primary': sideNavStore.menuActive == menu.name,
+        }"
         v-for="menu in menus"
         :key="menu"
+        @click="sideNavStore.menuActive = menu.name"
       >
         <Iconify :icon="menu.icon" width="20" height="20" class="ml-10" />
         <span class="text-lg">{{ menu.name }}</span>
-      </RouterLink>
+      </div>
     </div>
     <div class="justify-end">
       <RouterLink
@@ -31,6 +35,9 @@
 
 <script setup>
 import { reactive } from "vue";
+import { useSideNavStore } from "@/stores/sideNav";
+
+const sideNavStore = useSideNavStore();
 
 const menus = reactive([
   {
