@@ -13,6 +13,9 @@ export const useReviewStore = defineStore("review", () => {
   const addReview = (review) => {
     reviews.value.push(review);
   };
+  const getTotalReview = () => {
+    return reviews.value.length;
+  };
 
-  return { reviews, addReview };
+  return { reviews, addReview, getTotalReview };
 });

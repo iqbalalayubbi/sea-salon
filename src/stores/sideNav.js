@@ -3,6 +3,6 @@ import { defineStore } from "pinia";
 
 export const useSideNavStore = defineStore("sideNav", () => {
   const menuActive = "Dashboard";
-
-  return { menuActive };
+  const isOpen = false;
+  return { menuActive, isOpen };
 });

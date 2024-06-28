@@ -6,7 +6,9 @@
       description="Many benefit in this salon with your style"
     />
     <!-- cards -->
-    <section class="flex flex-col items-center gap-8 mt-10">
+    <section
+      class="flex flex-col items-center gap-8 mt-10 lg:flex-row lg:justify-around lg:w-full"
+    >
       <Card
         v-for="service in services"
         :key="service"

@@ -10,15 +10,15 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
+      path: "/dashboard",
       name: "adminPanel",
       component: AdminPanel,
     },
-    // {
-    //   path: "/",
-    //   name: "landingpage",
-    //   component: Landingpage,
-    // },
+    {
+      path: "/",
+      name: "landingpage",
+      component: Landingpage,
+    },
     {
       path: "/review",
       name: "review",
