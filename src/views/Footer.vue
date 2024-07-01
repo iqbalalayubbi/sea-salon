@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="mt-10 footer bg-cream-brown text-black-color flex flex-col items-center"
+    class="mt-10 footer bg-cream-brown text-black-color flex flex-col md:flex-row md:justify-evenly md:py-10 items-center"
     id="contacts"
   >
     <aside class="mt-10">

@@ -1,5 +1,8 @@
 <template>
-  <main class="flex flex-col items-center lg:flex-row h-screen">
+  <form
+    @submit.prevent="loginUser"
+    class="flex flex-col items-center lg:flex-row h-screen"
+  >
     <section class="bg-cream-brown flex-1 h-full relative hidden lg:block">
       <h1 class="text-center text-5xl text-primary font-bold mt-40">
         Welcome Back
@@ -17,12 +20,10 @@
           v-for="input in inputs"
           :key="input"
           v-model="input.value"
+          required
         />
       </section>
-      <button
-        class="btn btn-primary w-full max-w-xs mt-12 mb-5"
-        @click="loginUser"
-      >
+      <button class="btn btn-primary w-full max-w-xs mt-12 mb-5" type="submit">
         Login
       </button>
       <span
@@ -32,16 +33,15 @@
         ></span
       >
     </section>
-  </main>
+  </form>
 </template>
 
 <script setup>
+import apiClient from "@/api";
 import Logo from "@/components/Home/Logo.vue";
+import router from "@/router";
 import { reactive, ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
-
-const router = useRouter();
-const route = useRoute();
 
 const inputs = reactive([
   {
@@ -56,12 +56,20 @@ const inputs = reactive([
   },
 ]);
 
-function loginUser() {
+async function loginUser() {
   const user = {
     email: inputs[0].value,
     password: inputs[1].value,
   };
-  if (isAdmin()) router.push("/dashboard");
+  if (isAdmin()) return router.push("/dashboard");
+
+  try {
+    const result = await apiClient.post("/authentication/login", user);
+    const response = result.data;
+    if (response.isSuccess) router.push("/dashboard");
+  } catch (error) {
+    router.push("/login");
+  }
 }
 
 function isAdmin() {
