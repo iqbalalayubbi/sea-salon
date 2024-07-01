@@ -1,7 +1,7 @@
 <template>
   <main class="flex">
     <Sidenav />
-    <AdminContent class="mt-20 flex-1" />
+    <AdminContent class="mt-10 sm:mt-20 flex-1" />
   </main>
 </template>
 

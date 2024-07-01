@@ -13,6 +13,9 @@ const router = createRouter({
       path: "/dashboard",
       name: "adminPanel",
       component: AdminPanel,
+      meta: {
+        isAuth: true,
+      },
     },
     {
       path: "/",
@@ -40,6 +43,13 @@ const router = createRouter({
       component: Register,
     },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.isAuth) {
+    next();
+  }
+  next();
 });
 
 export default router;

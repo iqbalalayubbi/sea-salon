@@ -1,14 +1,18 @@
 <template>
   <section
-    class="bg-blue-500 flex items-center justify-center gap-5 w-[23%] h-40 rounded-md"
+    class="flex items-center justify-between gap-0 h-12 rounded-md sm:justify-center sm:gap-5 w-3/4 sm:w-[23%] sm:h-40"
     :class="className"
   >
     <div>
-      <Iconify :icon="icon" width="40" height="40" class="text-cream" />
+      <Iconify :icon="icon" class="text-cream w-20 h-5 sm:h-8" />
     </div>
-    <div class="text-cream">
-      <h1 class="font-bold text-2xl">{{ title }}</h1>
-      <h3 class="text-xl">{{ value }}</h3>
+    <div
+      class="text-cream sm:block flex justify-evenly gap-8 items-center w-3/4"
+    >
+      <h1 class="font-bold text-lg sm:text-2xl">
+        {{ title }}
+      </h1>
+      <h3 class="text-xl font-bold sm:font-thin">{{ value }}</h3>
     </div>
   </section>
 </template>

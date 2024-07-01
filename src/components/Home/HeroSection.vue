@@ -12,9 +12,12 @@
         Beauty and Elegance Redefined
       </h3>
       <h5 class="text-lg">Style your face & hair today in this salon</h5>
-      <button class="btn btn-primary mt-3 w-3/4 text-lg lg:w-1/2 lg:mt-5">
+      <RouterLink
+        to="/register"
+        class="btn btn-primary mt-3 w-3/4 text-lg lg:w-1/2 lg:mt-5"
+      >
         Reservation Now
-      </button>
+      </RouterLink>
     </section>
     <section class="self-end mt-10 w-60 sm:w-80 lg:w-[350px]">
       <img src="../../assets/image.png" alt="" />

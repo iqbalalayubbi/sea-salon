@@ -16,9 +16,15 @@
           class="input input-bordered w-full max-w-xs bg-cream-brown"
           v-for="input in inputs"
           :key="input"
+          v-model="input.value"
         />
       </section>
-      <button class="btn btn-primary w-full max-w-xs mt-12 mb-5">Login</button>
+      <button
+        class="btn btn-primary w-full max-w-xs mt-12 mb-5"
+        @click="loginUser"
+      >
+        Login
+      </button>
       <span
         >Don't have an account ?
         <RouterLink to="/register" class="link link-hover text-primary"
@@ -31,16 +37,36 @@
 
 <script setup>
 import Logo from "@/components/Home/Logo.vue";
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
+import { useRouter, useRoute } from "vue-router";
+
+const router = useRouter();
+const route = useRoute();
 
 const inputs = reactive([
   {
+    value: "",
     type: "email",
     placeholder: "Enter Your Email",
   },
   {
+    value: "",
     type: "password",
     placeholder: "Enter Your Password",
   },
 ]);
+
+function loginUser() {
+  const user = {
+    email: inputs[0].value,
+    password: inputs[1].value,
+  };
+  if (isAdmin()) router.push("/dashboard");
+}
+
+function isAdmin() {
+  const email = inputs[0].value;
+  const password = inputs[1].value;
+  return email == "thomas.n@compfest.id" && password == "Admin123";
+}
 </script>
