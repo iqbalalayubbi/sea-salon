@@ -47,9 +47,9 @@ function inputChange(input, value) {
   }
 }
 
-function addReview() {
-  review.addReview({
-    name: name.value,
+async function addReview() {
+  await review.addReview({
+    fullName: name.value,
     comment: comment.value,
     rating: rating.value,
   });
