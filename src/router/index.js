@@ -5,10 +5,27 @@ import Register from "../views/Register.vue";
 import Login from "../views/Login.vue";
 import Reservation from "@/views/Reservation.vue";
 import AdminPanel from "@/views/AdminPanel.vue";
+import ClientPanel from "@/views/ClientPanel.vue";
+import Profile from "@/views/Profile.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: "/",
+      name: "landingpage",
+      component: Landingpage,
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: Login,
+    },
+    {
+      path: "/register",
+      name: "register",
+      component: Register,
+    },
     {
       path: "/dashboard",
       name: "adminPanel",
@@ -16,11 +33,6 @@ const router = createRouter({
       meta: {
         isAuth: true,
       },
-    },
-    {
-      path: "/",
-      name: "landingpage",
-      component: Landingpage,
     },
     {
       path: "/review",
@@ -33,14 +45,14 @@ const router = createRouter({
       component: Reservation,
     },
     {
-      path: "/login",
-      name: "login",
-      component: Login,
+      path: "/client/dashboard",
+      name: "clientDashboard",
+      component: ClientPanel,
     },
     {
-      path: "/register",
-      name: "register",
-      component: Register,
+      path: "/profile",
+      name: "profile",
+      component: Profile,
     },
   ],
 });

@@ -12,17 +12,26 @@
         :key="input"
       />
       <select class="select select-bordered w-full max-w-xs bg-cream-brown">
-        <option disabled selected>Choose service</option>
+        <option disabled selected>Branches</option>
+        <option>SEA SALON - Surabaya</option>
+        <option>SEA SALON - Jakarta</option>
+        <option>SEA SALON - Mojokerto</option>
+      </select>
+      <select class="select select-bordered w-full max-w-xs bg-cream-brown">
+        <option disabled selected>Services</option>
         <option>Haircuts and Styling</option>
         <option>Manicure and Pedicure</option>
         <option>Facial Treatments</option>
       </select>
-      <button
-        class="btn btn-primary w-full max-w-xs mt-5"
-        @click="checkCounter"
-      >
-        Make Reservation
-      </button>
+      <div class="w-full max-w-xs mt-5">
+        <button class="btn btn-primary w-full">Make Reservation</button>
+        <RouterLink
+          to="/client/dashboard"
+          class="btn btn-secondary w-full mt-3"
+        >
+          Back
+        </RouterLink>
+      </div>
     </section>
   </main>
 </template>
@@ -48,10 +57,4 @@ const inputs = reactive([
     placeholder: "Reservation Time",
   },
 ]);
-
-const counter = useCounterStore();
-function checkCounter() {
-  counter.increment();
-  console.log(counter.count);
-}
 </script>

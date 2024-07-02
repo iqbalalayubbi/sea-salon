@@ -66,7 +66,7 @@ async function loginUser() {
   try {
     const result = await apiClient.post("/authentication/login", user);
     const response = result.data;
-    if (response.isSuccess) router.push("/dashboard");
+    if (response.isSuccess) router.push("/client/dashboard");
   } catch (error) {
     router.push("/login");
   }
