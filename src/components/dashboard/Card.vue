@@ -12,7 +12,7 @@
       <h1 class="font-bold text-lg sm:text-2xl">
         {{ title }}
       </h1>
-      <h3 class="text-xl font-bold sm:font-thin">{{ value }}</h3>
+      <h3 class="text-xl font-normal">{{ value }}</h3>
     </div>
   </section>
 </template>

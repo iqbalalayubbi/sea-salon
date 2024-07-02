@@ -1,12 +1,14 @@
 <template>
   <nav
-    class="h-screen sm:fixed fixed top-0 left-0 z-50 flex flex-col justify-start sm:justify-between transition-all duration-300"
+    class="h-screen fixed top-0 left-0 z-50 flex flex-col justify-start transition-all duration-300 sm:justify-between sm:static sm:bg-cream-brown"
     :class="{
       'w-60': sideNavStore.isOpen,
       'w-20': !sideNavStore.isOpen,
       'bg-transparent': !navMobileActive,
       'bg-cream-brown': navMobileActive,
     }"
+    @mouseenter="sideNavStore.isOpen = true"
+    @mouseleave="sideNavStore.isOpen = false"
   >
     <!-- mobile nav -->
     <div class="sm:hidden mt-5 flex pl-3">
@@ -25,8 +27,10 @@
         v-show="sideNavStore.isOpen"
       />
     </div>
+
+    <!-- nav sm -->
     <div
-      class="flex flex-col gap-3 text-black-color"
+      class="flex flex-col gap-3 text-black-color sm:flex"
       :class="{ hidden: !navMobileActive }"
     >
       <h1
@@ -50,7 +54,7 @@
         }}</span>
       </div>
     </div>
-    <div class="justify-end" :class="{ hidden: !navMobileActive }">
+    <div class="justify-end sm:block" :class="{ hidden: !navMobileActive }">
       <RouterLink
         to="/login"
         class="flex gap-3 items-center py-3 hover:text-cream hover:bg-red-500 transition-all duration-300 hover:cursor-pointer"
@@ -70,8 +74,7 @@
 <script setup>
 import { onMounted, reactive, ref } from "vue";
 import { useSideNavStore } from "@/stores/sideNav";
-// @mouseenter="sideNavStore.isOpen = true"
-//     @mouseleave="sideNavStore.isOpen = false"
+
 const navMobileActive = ref(false);
 const sideNavStore = useSideNavStore();
 
@@ -84,11 +87,6 @@ const menus = reactive([
   {
     name: "Clients",
     icon: "fluent:people-team-32-filled",
-    path: "/",
-  },
-  {
-    name: "Services",
-    icon: "map:beauty-salon",
     path: "/",
   },
   {

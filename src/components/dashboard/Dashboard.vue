@@ -12,8 +12,8 @@
         :className="info.color"
       />
     </div>
-    <!-- <TableReservation /> -->
-    <ListReservation />
+    <TableReservation class="hidden sm:block" />
+    <ListReservation class="block sm:hidden" />
   </main>
 </template>
 

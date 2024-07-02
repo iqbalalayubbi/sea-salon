@@ -61,12 +61,16 @@ async function loginUser() {
     email: inputs[0].value,
     password: inputs[1].value,
   };
-  if (isAdmin()) return router.push("/dashboard");
+  // if (isAdmin()) return router.push("/dashboard");
 
   try {
     const result = await apiClient.post("/authentication/login", user);
     const response = result.data;
-    if (response.isSuccess) router.push("/client/dashboard");
+    if (response.isSuccess) {
+      localStorage.setItem("token", response.data.token);
+      if (isAdmin()) return router.push("/dashboard");
+      router.push("/client/dashboard");
+    }
   } catch (error) {
     router.push("/login");
   }

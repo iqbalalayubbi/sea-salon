@@ -36,7 +36,6 @@
   </main>
 </template>
 <script setup>
-import { useCounterStore } from "@/stores/counter";
 import { reactive } from "vue";
 
 const inputs = reactive([

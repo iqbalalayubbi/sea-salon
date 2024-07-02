@@ -1,11 +1,11 @@
 <template>
   <main>
-    <Dashboard v-show="sideNavStore.menuActive == 'Dashboard'" />
-    <Client v-show="sideNavStore.menuActive == 'Clients'" />
-    <Services v-show="sideNavStore.menuActive == 'Services'" />
-    <Branch v-show="sideNavStore.menuActive == 'Branches'" />
-    <Reservation v-show="sideNavStore.menuActive == 'Reservations'" />
-    <Setting v-show="sideNavStore.menuActive == 'Settings'" />
+    <Dashboard v-if="sideNavStore.menuActive == 'Dashboard'" />
+    <Client v-if="sideNavStore.menuActive == 'Clients'" />
+    <Services v-if="sideNavStore.menuActive == 'Services'" />
+    <Branch v-if="sideNavStore.menuActive == 'Branches'" />
+    <Reservation v-if="sideNavStore.menuActive == 'Reservations'" />
+    <Setting v-if="sideNavStore.menuActive == 'Settings'" />
   </main>
 </template>
 <script setup>
