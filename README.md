@@ -12,6 +12,19 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+### Setup Server
+
+[sea-salon-api](https://github.com/iqbalalayubbi/sea-salon-api.git)
+
+### Clone This Project
+
+```sh
+git clone https://github.com/iqbalalayubbi/sea-salon.git
+cd sea-salon
+```
+
+### Install Dependencies
+
 ```sh
 pnpm install
 ```
